@@ -5,6 +5,11 @@
 
 
 @section('main_content')
+        <div class = "flex items-center justify-items-center pb-6">
+            <div class = "text-white">
+                <a class = "bg-green-500 p-4 rounded-xl drop-shadow-xl border border-green-600" href="{{ route('projects.create') }}">Aggiungi +</a>
+            </div>
+        </div>
         <div class = "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-x-2 gap-y-4">
         @foreach ($projects as $project)
                 <div class = "p-4 m-1 border-2 border-slate-500 drop-shadow-2xl rounded-xl">
