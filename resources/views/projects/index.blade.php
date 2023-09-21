@@ -5,12 +5,22 @@
 
 
 @section('main_content')
-        <div class = "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5">
+        <div class = "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-x-2 gap-y-4">
         @foreach ($projects as $project)
-                <div class = "p-4 m-1 border border-slate-500 drop-shadow-xl">
-                    <h2 class = "text-2xl">
-                        {{ $project->title }}
-                    </h2>
+                <div class = "p-4 m-1 border-2 border-slate-500 drop-shadow-2xl rounded-xl">
+                    <div class = "flex items-center justify-between gap-x-2"> 
+                        <h2 class = "text-2xl">
+                            {{ $project->title }}
+                        </h2>
+                        <div class = " text-white p-2">
+
+                            <a class = "bg-green-500 px-2 py-3 rounded-md" href="{{ route('projects.show', ['project' => $project->id]) }}">Vedi</a>
+                            <a class = "bg-orange-500 px-2 py-3 rounded-md" href="{{ route('projects.show', ['project' => $project->id]) }}">Modifica</a>
+                            <a class = "bg-red-500 px-2 py-3 rounded-md" href="{{ route('projects.show', ['project' => $project->id]) }}">Elimina</a>
+
+                        </div>
+                    </div>
+                    
                     <p>
                         Description: {{ $project->description }}
                     </p>
