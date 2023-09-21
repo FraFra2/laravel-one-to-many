@@ -17,11 +17,22 @@
                         <h2 class = "text-2xl">
                             {{ $project->title }}
                         </h2>
-                        <div class = " text-white p-2">
-
-                            <a class = "bg-green-500 px-2 py-3 rounded-md" href="{{ route('projects.show', ['project' => $project->id]) }}">Vedi</a>
-                            <a class = "bg-orange-500 px-2 py-3 rounded-md" href="{{ route('projects.show', ['project' => $project->id]) }}">Modifica</a>
-                            <a class = "bg-red-500 px-2 py-3 rounded-md" href="{{ route('projects.show', ['project' => $project->id]) }}">Elimina</a>
+                        <div class = " text-white p-2 flex items-center">
+                            <div>
+                                <a class = "bg-green-500 px-2 py-3 rounded-md" href="{{ route('projects.show', ['project' => $project->id]) }}">Vedi</a>
+                            </div>
+                            <div>
+                                <a class = "bg-orange-500 px-2 py-3 rounded-md" href="{{ route('projects.edit', ['project' => $project->id]) }}">Modifica</a>
+                            </div>
+                            <div>
+                                <form action="{{ route('projects.destroy', ['project'=>$project->id]) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class = "bg-red-500 px-2 py-3 rounded-md" type = "submit">
+                                        Elimina
+                                    </button>
+                                </form>
+                            </div>
 
                         </div>
                     </div>

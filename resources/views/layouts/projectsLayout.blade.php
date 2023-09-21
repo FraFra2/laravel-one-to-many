@@ -17,14 +17,11 @@
 <body>
     <header class="flex justify-between items-center p-4">
         <h3>
-            HEADER
+            <a href="{{ route('projects.index') }}">Tutti i Progetti</a>
         </h3>
 
         <nav>
-            <ul class = "flex gap-4">
-                <li>LINK 1</li>
-                <li>LINK 2</li>
-            </ul>
+            <a href="{{ route('dashboard') }}">DashBoard</a>
         </nav>
     </header>
     <main>
