@@ -21,7 +21,7 @@ class ProjectsTableSeeder extends Seeder
                 'title' => 'Project name',
                 'description' => 'Desc',
                 'languages' => fake()->randomElement(['Html-Css', 'Html-Css-Js', 'Vue + Vite', 'Laravel', 'Python']),
-                'category' => fake()->randomElement(['Front-End', 'Back-End', 'Fullstack', 'Mobile']),
+                // 'category' => fake()->randomElement(['Front-End', 'Back-End', 'Fullstack', 'Mobile']),
                 'project_status' => fake()->randomElement(['Initiation', 'Planning', 'Execution', 'Delay', 'Completion', 'Cancellation']),
                 'start_date' => fake()->dateTimeThisMonth(),
                 'end_date' => fake()->dateTimeThisMonth(),

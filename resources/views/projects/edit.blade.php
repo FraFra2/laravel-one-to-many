@@ -6,12 +6,12 @@
 
 @section('main_content')
          <div class = "w-[50%] mx-auto">
-            <div>
+            <div class ="my-4">
                 @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
+                <div class = "pb-4 h-32 overflow-y-scroll">
+                    <ul class = "flex flex-col gap-y-2">
                         @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
+                            <li class = "p-1 bg-red-300 border border-red-500 rounded-sm">{{ $error }}</li>
                         @endforeach
                     </ul>
                 </div>
@@ -22,15 +22,15 @@
                 @csrf
                 @method('PATCH')
                 <label class = "text-xl" for="titolo">Titolo Progetto</label>
-                <input value="{{ $project->title }}" name = "title" class = "p-0" id = "titolo" type="text">
+                <input value ="{{ $project->title }}" name = "title" class = "p-0" id = "titolo" type="text">
                 <label class = "text-xl" for="desc">Decrizione Progetto</label>
-                <input value="{{ $project->description }}" name = "description" class = "p-0" id = "desc" type="text">
+                <input value ="{{ $project->description }}" name = "description" class = "p-0" id = "desc" type="text">
                 <label class = "text-xl" for="lang">Linguaggi Progetto</label>
-                <input value="{{ $project->languages }}" name = "languages" class = "p-0" id = "lang" type="text">
-                <label class = "text-xl" for="categoria">Categoria Progetto</label>
-                <input value="{{ $project->category }}" name = "category" class = "p-0" id = "categoria" type="text">
+                <input value ="{{ $project->languages }}" name = "languages" class = "p-0" id = "lang" type="text">
+                {{-- <label class = "text-xl" for="categoria">Categoria Progetto</label>
+                <input value ="{{ $project->category }}" name = "category" class = "p-0" id = "categoria" type="text"> --}}
                 <label class = "text-xl" for="stato">Stato Progetto</label>
-                <input value="{{ $project->project_status }}" name = "project_status" class = "p-0" id = "stato" type="text">
+                <input value ="{{ $project->project_status }}" name = "project_status" class = "p-0" id = "stato" type="text">
                 <label class = "text-xl" for="titolo">Data Inizio Progetto</label>
                 <input value="{{ $project->start_date }}" name = "start_date" class = "p-0" id = "titolo" type="date">
                 <label class = "text-xl" for="titolo">Data Fine Progetto <span>(Optional)</span></label>

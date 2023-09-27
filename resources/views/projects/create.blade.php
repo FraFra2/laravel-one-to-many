@@ -5,13 +5,13 @@
 
 
 @section('main_content')
-         <div class = "w-[50%] mx-auto">
-            <div>
+         <div class = "w-[60%] mx-auto">
+            <div class ="my-4">
                 @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
+                <div class = "pb-4 h-32 overflow-y-scroll">
+                    <ul class = "flex flex-col gap-y-2">
                         @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
+                            <li class = "p-1 bg-red-300 border border-red-500 rounded-sm">{{ $error }}</li>
                         @endforeach
                     </ul>
                 </div>
@@ -26,8 +26,8 @@
                 <input name = "description" class = "p-0" id = "desc" type="text">
                 <label class = "text-xl" for="lang">Linguaggi Progetto</label>
                 <input name = "languages" class = "p-0" id = "lang" type="text">
-                <label class = "text-xl" for="categoria">Categoria Progetto</label>
-                <input name = "category" class = "p-0" id = "categoria" type="text">
+                {{-- <label class = "text-xl" for="categoria">Categoria Progetto</label>
+                <input name = "category" class = "p-0" id = "categoria" type="text"> --}}
                 <label class = "text-xl" for="stato">Stato Progetto</label>
                 <input name = "project_status" class = "p-0" id = "stato" type="text">
                 <label class = "text-xl" for="titolo">Data Inizio Progetto</label>

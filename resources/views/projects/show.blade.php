@@ -26,9 +26,9 @@
                     <h4 class = "border-b-2 border-red-600">
                         Languages: {{ $project->languages }}
                     </h4>
-                    <h4>
+                    {{-- <h4>
                         Category: <span class = "text-xl">{{ $project->category }}</span> 
-                    </h4>
+                    </h4> --}}
                     <h4>
                         Status: {{ $project->project_status }}
                     </h4>
