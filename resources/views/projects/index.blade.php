@@ -5,6 +5,9 @@
 
 
 @section('main_content')
+        <div class = "p-4 text-xl">
+            <a class = "text-white p-2 bg-green-500 hover:bg-green-600 transition-all rounded-xl border border-green-600" href="{{ route('types.index') }}"><i class="fa-solid fa-wrench fa-xl"></i> Gestione Types</a>
+        </div>
         <div class = "flex justify-stretch text-center py-4">
             <a class = "bg-green-500 text-white text-xl w-full p-4 rounded-xl drop-shadow-xl border border-green-600" href="{{ route('projects.create') }}">Aggiungi +</a>
         </div>

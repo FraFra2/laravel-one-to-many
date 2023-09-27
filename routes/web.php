@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TypeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +21,8 @@ Route::get('/', function () {
 });
 
 Route::resource('projects', ProjectController::class);
+
+Route::resource('types', TypeController::class);
 
 
 Route::get('/dashboard', function () {
