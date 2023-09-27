@@ -11,11 +11,15 @@ class Project extends Model
         'title',
         'description',
         'languages',
-        'category',
+        'type_id',
         'project_status',
         'start_date',
         'end_date',
         // Aggiungi qui gli altri campi che vuoi consentire per il mass assignment
     ];
+
+    public function type(){
+        return $this->belongsTo(Type::class);
+    }
     use HasFactory;
 }
