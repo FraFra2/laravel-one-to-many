@@ -45,7 +45,7 @@
                 <label class = "text-xl" for="titolo">Data Fine Progetto <span>(Optional)</span></label>
                 <input name = "end_date" class = "p-0" id = "titolo" type="date">
 
-                <button class = "mt-2 p-2 bg-green-500 text-white text-xl" type="submit">SUBMIT +</button>
+                <button  class = "mt-2 p-2 bg-green-500 text-white text-xl" type="submit">SUBMIT +</button>
             </form>
          </div>
 @endsection

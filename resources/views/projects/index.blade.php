@@ -28,7 +28,7 @@
                                 <form method = "POST" action="{{ route('projects.destroy', ['project'=>$project->id]) }}">
                                     @csrf
                                     @method('DELETE')
-                                    <button class = "bg-red-500 px-2 py-3 rounded-md" type = "submit">
+                                    <button onclick="return confirm('Sei sicuro di voler eliminare il progetto {{ $project->title }}?')" class = "bg-red-500 px-2 py-3 rounded-md" type = "submit">
                                         Elimina
                                     </button>
                                 </form>
