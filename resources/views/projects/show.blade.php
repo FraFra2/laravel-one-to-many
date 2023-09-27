@@ -12,23 +12,27 @@
                         <h2 class = "text-2xl">
                             {{ $project->title }}
                         </h2>
-                        <div class = " text-white p-2">
+                        <div class = "flex gap-4 text-white p-2">
 
-                            <a class = "bg-green-500 px-2 py-3 rounded-md" href="{{ route('projects.show', ['project' => $project->id]) }}">Vedi</a>
-                            <a class = "bg-orange-500 px-2 py-3 rounded-md" href="{{ route('projects.show', ['project' => $project->id]) }}">Modifica</a>
-                            <a class = "bg-red-500 px-2 py-3 rounded-md" href="{{ route('projects.show', ['project' => $project->id]) }}">Elimina</a>
-
+                            <a class = "bg-orange-500 px-2 py-3 rounded-md" href="{{ route('projects.edit', ['project' => $project->id]) }}">Modifica</a>
+                            <form method = "POST" action="{{ route('projects.destroy', ['project'=>$project->id]) }}">
+                                @csrf
+                                @method('DELETE')
+                                <button class = "bg-red-500 px-2 py-3 rounded-md" type = "submit">
+                                    Elimina
+                                </button>
+                            </form>
                         </div>
                     </div>
                     <p>
                         Description: {{ $project->description }}
                     </p>
+                    <h4>
+                        Type: <span class = "text-xl">{{ $project->type->name }}</span> 
+                    </h4>
                     <h4 class = "border-b-2 border-red-600">
                         Languages: {{ $project->languages }}
                     </h4>
-                    {{-- <h4>
-                        Category: <span class = "text-xl">{{ $project->category }}</span> 
-                    </h4> --}}
                     <h4>
                         Status: {{ $project->project_status }}
                     </h4>
