@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 
 
 use App\Models\Project;
+use App\Models\Type;
 class ProjectsTableSeeder extends Seeder
 {
     /**
@@ -14,9 +15,11 @@ class ProjectsTableSeeder extends Seeder
      */
     public function run(): void
     {
+        $types = Type::all();
+
         Project::truncate();
         for ($i = 0; $i < 10; $i++) {
-
+            $randomType = $types -> random();
             Project::create([
                 'title' => 'Project name',
                 'description' => 'Desc',
@@ -25,6 +28,7 @@ class ProjectsTableSeeder extends Seeder
                 'project_status' => fake()->randomElement(['Initiation', 'Planning', 'Execution', 'Delay', 'Completion', 'Cancellation']),
                 'start_date' => fake()->dateTimeThisMonth(),
                 'end_date' => fake()->dateTimeThisMonth(),
+                'type_id' => $randomType->id,
             ]);
         }
     }
