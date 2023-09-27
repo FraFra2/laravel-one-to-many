@@ -27,8 +27,12 @@
                 <input value ="{{ $project->description }}" name = "description" class = "p-0" id = "desc" type="text">
                 <label class = "text-xl" for="lang">Linguaggi Progetto</label>
                 <input value ="{{ $project->languages }}" name = "languages" class = "p-0" id = "lang" type="text">
-                {{-- <label class = "text-xl" for="categoria">Categoria Progetto</label>
-                <input value ="{{ $project->category }}" name = "category" class = "p-0" id = "categoria" type="text"> --}}
+                <label class = "text-xl" for="type">Tipo</label>
+                <select name="type_id" id="type">
+                    <option value="1">Front-End</option>
+                    <option value="2">Back-End</option>
+                    <option value="3">Full-Stack</option>
+                </select>
                 <label class = "text-xl" for="stato">Stato Progetto</label>
                 <input value ="{{ $project->project_status }}" name = "project_status" class = "p-0" id = "stato" type="text">
                 <label class = "text-xl" for="titolo">Data Inizio Progetto</label>
@@ -39,3 +43,6 @@
             </form>
          </div>
 @endsection
+
+
+

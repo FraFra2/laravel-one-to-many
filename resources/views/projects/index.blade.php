@@ -25,7 +25,7 @@
                                 <a class = "bg-orange-500 px-2 py-3 rounded-md" href="{{ route('projects.edit', ['project' => $project->id]) }}">Modifica</a>
                             </div>
                             <div>
-                                <form action="{{ route('projects.destroy', ['project'=>$project->id]) }}">
+                                <form method = "POST" action="{{ route('projects.destroy', ['project'=>$project->id]) }}">
                                     @csrf
                                     @method('DELETE')
                                     <button class = "bg-red-500 px-2 py-3 rounded-md" type = "submit">
@@ -40,12 +40,12 @@
                     <p>
                         Description: {{ $project->description }}
                     </p>
+                    <h4>
+                        Type: <span class = "text-xl">{{ $project->type->name }}</span> 
+                    </h4>
                     <h4 class = "border-b-2 border-red-600">
                         Languages: {{ $project->languages }}
                     </h4>
-                    {{-- <h4>
-                        Category: <span class = "text-xl">{{ $project->category }}</span> 
-                    </h4> --}}
                     <h4>
                         Status: {{ $project->project_status }}
                     </h4>
