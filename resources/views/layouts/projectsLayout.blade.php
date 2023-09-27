@@ -13,15 +13,19 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        {{-- FA --}}
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header class="flex justify-between items-center p-4">
         <h3>
-            <a href="{{ route('projects.index') }}">Tutti i Progetti</a>
+            <a href="{{ route('projects.index') }}"><i class="fa-solid fa-house fa-xl"></i> Tutti i Progetti </a>
         </h3>
 
         <nav>
-            <a href="{{ route('dashboard') }}">DashBoard</a>
+            <a href="{{ route('dashboard') }}"><i class="fa-solid fa-table-columns fa-xl"></i> DashBoard</a>
         </nav>
     </header>
     <main>
